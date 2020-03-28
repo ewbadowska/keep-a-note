@@ -4,14 +4,15 @@ import Note from './Note';
 import Footer from './Footer';
 import CreateNote from './CreateNote';
 
-
 function App() {
-  const [ notes, setNotes ] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
-    setNotes(prevNotes => {
-      return [...prevNotes, newNote];
-    });
+    setNotes((prevNotes) => [...prevNotes, newNote]);
+  }
+
+  function deleteNote(id) {
+    setNotes((prevNotes) => prevNotes.filter((noteItem, index) => index !== id));
   }
 
   return (
@@ -20,13 +21,15 @@ function App() {
       <CreateNote
         onSubmit={addNote}
       />
-      {notes.map((noteItem) => (
+      {notes.map((noteItem, index) => (
         <Note
+          key={index}
+          id={index}
           title={noteItem.title}
           content={noteItem.content}
+          onDelete={deleteNote}
         />
       ))}
-      <Note key={1} title="Note title" content="Note content" />
       <Footer />
     </div>
   );
