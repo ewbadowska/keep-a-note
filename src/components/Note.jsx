@@ -15,10 +15,10 @@ const useStyles = makeStyles({
     margin: '4ch',
   },
   title: {
-    width: '35ch',
+    width: '20ch',
   },
   textarea: {
-    width: '30ch',
+    width: '15ch',
   },
   button: {
     background: '#679b9b',
@@ -37,7 +37,7 @@ function Note(props) {
     <div className={classes.root}>
       <Card className={classes.card}>
         <CardContent>
-          <Typography variant="headline" className={classes.title}>
+          <Typography variant="h5" className={classes.title}>
             {props.title}
           </Typography>
           <Typography multiline className={classes.textarea}>
