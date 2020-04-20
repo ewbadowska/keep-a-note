@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     width: '20ch',
   },
   textarea: {
-    width: '15ch',
+    width: '30ch',
   },
   button: {
     background: '#679b9b',
